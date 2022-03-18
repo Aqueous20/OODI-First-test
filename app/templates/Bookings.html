@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="page-header">Booking Form</h1>
+<p>Fill in this form with Booking Information</p>
+<form method = "POST" action = "{{url_for('Bookings')}}">
+    {{form.csrf_token}}
+    {{ form.firstname.label }}
+    <br>
+    {{form.firstname(size = 20)}}
+    <p>Please enter the first name</p> 
+    
+    {{ form.lastname.label }}
+    <br>
+    {{form.lastname(size = 20)}} 
+    <p>Please enter the last name</p>
+    
+    {{ form.address.label }}
+    <br>
+    {{form.address(size = 20)}}
+    <p>Please enter the address</p> 
+    
+    {{ form.email.label }}
+    <br>
+    {{form.email()}} 
+    <p>Please enter your Email</p>
+    
+    {{ form.phonenumber.label }}
+    <br>
+    {{form.phonenumber(size = 12)}} 
+    <p>Please enter the phonenumber</p>
+    {{ form.Equipment_needed.label }}
+    <br>
+    <p>Please enter the equipment needed</p>
+	    {{form.Equipment_needed()}} 
+    <br>
+    <button class="button glow-button" type = "submit"> submit </button>
+</form>
+{% endblock %}
